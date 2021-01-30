@@ -1,0 +1,19 @@
+.Search .btn-primary.mb-2:hover {
+  background-color: white;
+  transition: 0.22s ease;
+}
+
+.Search .btn-primary.mb-2 {
+  background-color: rgba(128, 128, 128, 0.349);
+  border: 0.5px solid white;
+  border-radius: 50%;
+  padding: 0.2rem 0.45rem;
+}
+
+.Search i:hover {
+  color: black;
+}
+
+i:hover {
+  color: black;
+}
