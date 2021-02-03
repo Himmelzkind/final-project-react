@@ -1,3 +1,29 @@
+body {
+  background-color: #27292b;
+  font-family: "Playfair Display", "Open Sans condensed", "Calibri Light", Arial;
+  color: white;
+}
+
+.Search {
+  border: 1px solid;
+  max-width: 500px;
+  margin: 30px auto 0 auto;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7570378493194152) 0%,
+      rgba(150, 150, 150, 0.3536765047816002) 39%,
+      rgba(224, 224, 224, 0.03995101458552175) 100%
+    ),
+    url("https://cdn.pixabay.com/photo/2016/03/09/15/18/stars-1246590__340.jpg");
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: 2px 0px 3px rgba(128, 128, 128, 0.301),
+    -2px 0px 3px rgba(128, 128, 128, 0.301);
+  padding: 20px 30px 10px 30px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  max-width: 500px;
+  text-align: center;
+}
+
 .Search .btn-primary.mb-2:hover {
   background-color: white;
   transition: 0.22s ease;
