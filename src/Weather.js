@@ -11,8 +11,8 @@ export default function Weather(props){
     
                 <div className="weatherToday">
                     <img id="icon-main" src={props.data.iconUrl} alt={props.data.description} />
-                    <strong id="currentTemp">{props.data.temperature}</strong>
-                    <span className="units">{props.data.temperature}
+                    <strong id="currentTemp">{props.data.temp_max}</strong>
+                    <span className="units"> | {props.data.temp_min}
                         <button className="celsius-link">°C</button>
                         <button className="fahrenheit-link">°F</button>
                     </span>

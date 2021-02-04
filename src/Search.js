@@ -17,10 +17,12 @@ export default function Search(props) {
             city: response.data.name,
             date: new Date(response.data.dt * 1000),
             temperature: Math.round(response.data.main.temp),
+            temp_max: Math.round(response.data.main.temp_max),
+            temp_min: Math.round(response.data.main.temp_min),
             humidity: Math.round(response.data.main.humidity),
             description: response.data.weather[0].description,
             windSpeed: Math.round(response.data.wind.speed),
-            iconUrl: "https://icons-for-free.com/iconfiles/png/512/cloud+day+forecast+lightning+shine+storm+sun+weather+icon-1320183295537909806.png"
+            iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
         });
     }
 
@@ -39,7 +41,7 @@ export default function Search(props) {
     }
 
     function handleInputCity(response){
-      setCity(response.target.city);
+      setCity(response.target.value);
     
     }
     if (weatherData.ready){
