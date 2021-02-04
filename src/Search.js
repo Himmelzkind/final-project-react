@@ -22,7 +22,7 @@ export default function Search(props) {
             humidity: Math.round(response.data.main.humidity),
             description: response.data.weather[0].description,
             windSpeed: Math.round(response.data.wind.speed),
-            iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+            icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
         });
     }
 
