@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./search.css";
-import Weather from "./Weather.js";
+import WeatherToday from "./WeatherToday.js";
+import Forecast from "./Forecast.js";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompass } from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +16,8 @@ export default function Search(props) {
         setWeatherData({
             ready: true,
             city: response.data.name,
+            latitude:response.data.coord.lat,
+            longitude: response.data.coord.lon,
             date: new Date(response.data.dt * 1000),
             temperature: Math.round(response.data.main.temp),
             temp_max: Math.round(response.data.main.temp_max),
@@ -22,17 +25,18 @@ export default function Search(props) {
             humidity: Math.round(response.data.main.humidity),
             description: response.data.weather[0].description,
             windSpeed: Math.round(response.data.wind.speed),
-            icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+            icon: response.data.weather[0].icon
         });
     }
 
     function search(){
-      const apiKey = "361119f7d767ce895ccf917d2e91cc83";
+      const apiKey = "e2a3cfc5b57e63037c66c950b5e2bb3f";
       let apiUrl =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
       axios.get(apiUrl).then(handleResponse);
-      return (
-        "loading..."
-        )
+    }
+
+    function handleInputCity(response){
+      setCity(response.target.value);
     }
 
     function handleSubmit(event){
@@ -40,10 +44,6 @@ export default function Search(props) {
       search();
     }
 
-    function handleInputCity(response){
-      setCity(response.target.value);
-    
-    }
     if (weatherData.ready){
       return (
         <div className="Search">
@@ -77,15 +77,16 @@ export default function Search(props) {
                   </button>
                 </div>
               </div>
-          </form>
+            </form>
+            <WeatherToday data={weatherData}/>
+            <Forecast city={weatherData.city} latitude={weatherData.latitude} longitude={weatherData.longitude}/>
+
           </div>
-          <Weather data={weatherData}/>
-          
         </div>
       );
       } else {
         search();
-        return ("loading...");
+        return ("loading... Search.js");
     }
     
 }

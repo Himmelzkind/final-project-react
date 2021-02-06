@@ -3,7 +3,7 @@ import React from "react";
 export default function WeatherIcon(props){
     
     const codeMapping = {
-        "01d": "Clear_day",
+        "01d": "clear_day",
         "02d": "few_clouds_day",
         "03d": "scattered_clouds_Day",
         "04d": "broken_clouds_Day",
@@ -26,5 +26,5 @@ export default function WeatherIcon(props){
 
     return(
         <img id="icon-main" src={iconUrl} alt={props.altText}/>
-    )
+    );
 }
