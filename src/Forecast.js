@@ -11,10 +11,6 @@ export default function Forecast(props){
     function displayForecast(response){
         setForecast(response.data);
         setLoaded(true);
-        
-        console.log(forecast.daily[0].dt);
-        console.log(`dt ist gleich: ${response.data.daily[0].dt}`);
-        console.log(`wetter icon id: ${response.data.daily[0].weather[0].icon}`);
     }
     
 
@@ -22,12 +18,12 @@ export default function Forecast(props){
         return (
             <div className="Forecast">
                 <div className="row forecast_bottom">
-                    <WeatherForcastPreview data={forecast.data.daily[0]}/>
-                    <WeatherForcastPreview data={forecast.data.daily[1]}/>
-                    <WeatherForcastPreview data={forecast.data.daily[2]}/>
-                    <WeatherForcastPreview data={forecast.data.daily[3]}/>
-                    <WeatherForcastPreview data={forecast.data.daily[4]}/>
-                    <WeatherForcastPreview data={forecast.data.daily[5]}/>
+                    <WeatherForcastPreview data={forecast.daily[0]}/>
+                    <WeatherForcastPreview data={forecast.daily[1]}/>
+                    <WeatherForcastPreview data={forecast.daily[2]}/>
+                    <WeatherForcastPreview data={forecast.daily[3]}/>
+                    <WeatherForcastPreview data={forecast.daily[4]}/>
+                    <WeatherForcastPreview data={forecast.daily[5]}/>
                 </div>
             </div>
         );

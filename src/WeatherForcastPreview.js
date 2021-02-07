@@ -22,7 +22,7 @@ export default function WeatherForcastPreview(props){
         let minTemp = Math.round(props.data.temp.min);
 
         return(
-            `<strong>${maxTemp}°</strong>|${minTemp}°`
+            <p><strong>{maxTemp}°</strong>|{minTemp}°</p>
         )
     }
 
