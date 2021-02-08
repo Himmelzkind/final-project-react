@@ -1,4 +1,5 @@
 import React from "react";
+import "./weathericon.css";
 
 export default function WeatherIcon(props){
     
@@ -12,7 +13,7 @@ export default function WeatherIcon(props){
         "11d": "thunderstorm",
         "15d": "snow",
         "50d": "mist",
-        "01n": "Clear_Night",
+        "01n": "clear_night",
         "02n": "few_clouds_night",
         "03n": "scattered_clouds_night",
         "04n": "broken_clouds_night",
@@ -22,9 +23,11 @@ export default function WeatherIcon(props){
         "15n": "snow",
         "50n": "mist",
     };
-    let iconUrl = `../img/${codeMapping[props.code]}.png`;
+    let iconUrl = `/img/${codeMapping[props.code]}.png`;
+    console.log(`iconUrl ist gleich: ${iconUrl}`);
 
     return(
+        
         <img id="icon-main" src={iconUrl} alt={props.altText}/>
     );
 }
