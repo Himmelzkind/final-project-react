@@ -6,6 +6,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompass } from "@fortawesome/free-solid-svg-icons";
 import { faStreetView } from "@fortawesome/free-solid-svg-icons";
+import Geolocation from '@react-native-community/geolocation';
 
 
 export default function Search(props) {
@@ -44,6 +45,21 @@ export default function Search(props) {
       search();
     }
 
+    function searchLocation(position){
+      // get current location (coordinates) of your device and pass them on to display temperature of your location
+      //position.preventDefault();
+      let latitude = position.coords.latitude;
+      let longitude = position.coords.longitude;
+      let apiKey = "361119f7d767ce895ccf917d2e91cc83";
+      let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+      axios.get(weatherUrl).then(handleResponse);
+    }
+
+    function getCurrentLocation(event){
+      event.preventDefault();
+      Geolocation.getCurrentPosition(searchLocation());
+    }
+
     if (weatherData.ready){
       return (
         <div className="Search">
@@ -72,7 +88,7 @@ export default function Search(props) {
                 </div>
 
                 <div>
-                  <button className="btn btn-primary mb-2" id="location-button">
+                  <button className="btn btn-primary mb-2" id="location-button" onClick={getCurrentLocation}>
                     <FontAwesomeIcon icon={faStreetView} />
                   </button>
                 </div>
