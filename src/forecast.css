@@ -1,0 +1,9 @@
+.col-2 {
+  width: 30px;
+  padding: 5px;
+}
+
+#icon-main {
+  margin: 0 auto;
+  max-width: 100%;
+}

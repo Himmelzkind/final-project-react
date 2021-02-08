@@ -1,3 +1,7 @@
+.WeatherToday {
+  margin-bottom: 20px;
+}
+
 .WeatherToday h1 {
   font-size: 30px;
   font-weight: 600;
@@ -15,6 +19,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.WeatherToday p {
+  font-size: 20px;
 }
 
 .WeatherUnits .celsius-link {
@@ -51,4 +59,8 @@
 
 .WeatherUnits #notactive {
   font-weight: normal;
+}
+
+.WeatherUnits {
+  font-size: 40px;
 }
