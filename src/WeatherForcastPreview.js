@@ -27,10 +27,10 @@ export default function WeatherForcastPreview(props){
     }
 
     return(
-        <div class="col-2">
+        <div className="col-2">
             <h3>{formatDay(props.data.dt * 1000)}</h3>
             <WeatherIcon code={props.data.weather[0].icon} />
-            <div class="weather-forecast-temp">
+            <div className="weather-forecast-temp">
                 {temperature()}
             </div>
         </div>

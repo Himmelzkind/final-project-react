@@ -1,26 +1,27 @@
 body {
   background-color: #27292b;
-  font-family: "Playfair Display", "Open Sans condensed", "Calibri Light", Arial;
+  font-family: "Noto Serif JP", serif;
   color: white;
 }
 
 .Search {
   border: 1px solid;
-  max-width: 500px;
+  max-width: 400px;
   margin: 30px auto 0 auto;
+  background: 0, 0, 0;
   background: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.7570378493194152) 0%,
-      rgba(150, 150, 150, 0.3536765047816002) 39%,
-      rgba(224, 224, 224, 0.03995101458552175) 100%
+      rgba(0, 0, 0, 0.8) 30%,
+      rgba(130, 130, 130, 0.6001751042213761) 32%,
+      rgba(255, 255, 255, 0) 72%,
+      rgba(255, 255, 255, 0) 100%
     ),
-    url("https://cdn.pixabay.com/photo/2016/03/09/15/18/stars-1246590__340.jpg");
-  border-radius: 20px 20px 0px 0px;
+    url("/img/waves.tif");
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 2px 0px 3px rgba(128, 128, 128, 0.301),
     -2px 0px 3px rgba(128, 128, 128, 0.301);
   padding: 20px 30px 10px 30px;
   border: 1px solid rgba(0, 0, 0, 0);
-  max-width: 500px;
   text-align: center;
 }
 
