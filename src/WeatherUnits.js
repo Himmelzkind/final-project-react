@@ -19,7 +19,7 @@ export default function WeatherUnits(props){
                 <span className="temperature"><strong id="currentTemp">{props.tempmax_celsius}°</strong> | {props.tempmin_celsius}</span>
                 <span className="units">
                     <a href="/" className="celsius-link" id="activeC">°C</a>
-                    <a href="/" className="fahrenheit-link" onClick={showFahrenheit}> | °F</a>
+                    <a href="/" className="fahrenheit-link" onClick={showFahrenheit}> °F</a>
                 </span>
             </div>
         );
@@ -31,7 +31,7 @@ export default function WeatherUnits(props){
                 <span className="temperature"><strong id="currentTemp">{fahrenheit_max}°</strong> | {fahrenheit_min}</span>
                 <span className="units">
                     <a href="/" className="celsius-link" id="notactive" onClick={showCelsius}>°C</a>
-                    <a href="/" className="fahrenheit-link"id="activeF"> | °F</a>
+                    <a href="/" className="fahrenheit-link"id="activeF">  °F</a>
                 </span>
             </div>
         );
