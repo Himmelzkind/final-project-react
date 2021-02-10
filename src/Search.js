@@ -32,7 +32,7 @@ export default function Search(props) {
 
     function search(){
       const apiKey = "e2a3cfc5b57e63037c66c950b5e2bb3f";
-      let apiUrl =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+      let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
       axios.get(apiUrl).then(handleResponse);
     }
 
